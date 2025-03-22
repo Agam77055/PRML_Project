@@ -1,0 +1,647 @@
+{
+    "intents": [
+      {
+        "tag": "greeting",
+        "patterns": ["Hi", "Hello", "Hey", "Good day", "How are you?"],
+        "responses": ["Hello!", "Good to see you!", "Hi there, how can I help?"],
+        "context_set": ""
+      },
+      {
+        "tag": "farewell",
+        "patterns": ["Goodbye", "Bye", "See you later", "Talk to you later"],
+        "responses": ["Sad to see you go :(", "Goodbye!", "Come back soon!"],
+        "context_set": ""
+      },
+      {
+        "tag": "creator",
+        "patterns": ["Who created you?", "Who is your developer?", "Who made you?"],
+        "responses": ["I was developed by students of IIT Jodhpur as a part of their PRML project."],
+        "context_set": ""
+      },
+      {
+        "tag": "identity",
+        "patterns": ["What is your name?", "What should I call you?", "Who are you?"],
+        "responses": ["You can call me Chat Plus. I'm a chatbot created by IIT Jodhpur students."],
+        "context_set": ""
+      },
+      {
+        "tag": "hours",
+        "patterns": ["What are the college timings?", "When is the college open?", "What are your hours of operation?"],
+        "responses": ["IIT Jodhpur generally operates from 8:00 AM to 6:00 PM on weekdays. Class schedules may vary by department and year."],
+        "context_set": ""
+      },
+      {
+        "tag": "contact",
+        "patterns": ["How can I contact the college?", "What is the college telephone number?", "Can I get your contact number?"],
+        "responses": ["You can reach IIT Jodhpur at +91 291 280 1133 or visit the official website at www.iitj.ac.in for more contact details."],
+        "context_set": ""
+      },
+      {
+        "tag": "courses",
+        "patterns": ["What courses are offered in the college?", "Can you tell me about the available courses?", "What are the branches in the college?"],
+        "responses": ["IIT Jodhpur offers BTech, MTech, MSc, MBA, and PhD programs across various disciplines including Computer Science, Electrical Engineering, Mechanical Engineering, AI & Data Science, and more."],
+        "context_set": ""
+      },
+      {
+        "tag": "fees",
+        "patterns": ["How much is the college fee?", "Tell me about the fees", "What are the hostel fees?"],
+        "responses": ["Fee details vary by program and category. For the most accurate and updated fee structure, please visit the official IIT Jodhpur website (www.iitj.ac.in)."],
+        "context_set": ""
+      },
+      {
+        "tag": "location",
+        "patterns": ["Where is the college located?", "What is the college address?", "How can I reach the college?"],
+        "responses": ["IIT Jodhpur is located at NH 62, Nagaur Road, Karwar, Jodhpur, Rajasthan – 342030. You can easily find the location on Google Maps."],
+        "context_set": ""
+      },
+      {
+        "tag": "hostel",
+        "patterns": ["Does the college provide hostel facilities?", "Where is the hostel located?", "What are the hostel fees?"],
+        "responses": ["Yes, IIT Jodhpur is a fully residential campus with modern hostel facilities for both boys and girls. Hostel blocks are well-equipped and located within the main campus."],
+        "context_set": ""
+      },
+      {
+        "tag": "events",
+        "patterns": ["What events are organized in the college?", "Are there any upcoming events?", "Tell me about the college events."],
+        "responses": ["IIT Jodhpur hosts a variety of events like Ignus (cultural fest), Prometeo (technical fest), and Varchas (sports fest), among others. Check the institute’s website or social media for updates."],
+        "context_set": ""
+      },
+      {
+        "tag": "admission",
+        "patterns": ["What is the admission process?", "How can I take admission in the college?", "Tell me about the admission criteria."],
+        "responses": ["Admission to IIT Jodhpur is through national-level exams like JEE Advanced for BTech, GATE for MTech, JAM for MSc, and CAT for MBA. Visit www.iitj.ac.in for complete details."],
+        "context_set": ""
+      },
+      {
+        "tag": "library",
+        "patterns": ["Does the college have a library?", "Where is the library located?", "What are the library timings?"],
+        "responses": ["Yes, IIT Jodhpur has a central library located in the Academic Block. It is open from 9 AM to 9 PM on working days and 10 AM to 6 PM on weekends, but the students can use the facility for studying 24 x 7."],
+        "context_set": ""
+      },
+      {
+        "tag": "facilities",
+        "patterns": ["What facilities are available in the college?", "Tell me about the college facilities.", "Do you have a sports complex?"],
+        "responses": ["IIT Jodhpur offers state-of-the-art facilities including academic labs, hostels, a central library, sports complex, gymnasium, health center, and student activity centers."],
+        "context_set": ""
+      },
+      {
+        "tag": "placement",
+        "patterns": ["How are the placements in the college?", "Tell me about the college placements.", "What is the placement record?"],
+        "responses": ["IIT Jodhpur has a strong placement record with companies like Google, Microsoft, Goldman Sachs, and Tata visiting the campus. The Career Development Cell actively supports students throughout the process."],
+        "context_set": ""
+      },
+      {
+        "tag": "school_choice",
+        "patterns": ["Why did you choose this school?", "What made you decide to attend this college?"],
+        "responses": ["IIT Jodhpur is known for its academic excellence, strong research culture, and modern infrastructure, making it a top choice for many students."],
+        "context_set": ""
+      },
+      {
+        "tag": "happiness",
+        "patterns": ["Are you happy here?", "Do you enjoy being at this college?"],
+        "responses": ["As an AI, I don’t have emotions, but IIT Jodhpur offers a vibrant and intellectually stimulating environment for its students."],
+        "context_set": ""
+      },
+      {
+        "tag": "strengths",
+        "patterns": ["What are your school's strengths?", "What makes your college stand out?"],
+        "responses": ["IIT Jodhpur stands out for its innovation-driven curriculum, interdisciplinary research, excellent faculty, and a beautiful residential campus in Rajasthan."],
+        "context_set": ""
+      },
+      {
+        "tag": "complaints",
+        "patterns": ["What's your #1 complaint about your school?", "What do you think needs improvement in your college?"],
+        "responses": ["As a chatbot, I don’t hold opinions, but continuous student feedback helps IIT Jodhpur improve in areas like Wi-Fi, mess quality, and academic scheduling."],
+        "context_set": ""
+      },
+        {
+          "tag": "improvements",
+          "patterns": ["What else could stand to be improved?", "In which areas do you think your college can improve?"],
+          "responses": ["IIT Jodhpur is constantly evolving, but areas like improving student amenities, streamlining administrative processes, and enhancing public transport connectivity can be considered for further development."],
+          "context_set": ""
+        },
+        {
+          "tag": "accessibility",
+          "patterns": ["How accessible are administrators, registrars, financial aid officers, etc.?", "Can students easily reach out to college staff when needed?"],
+          "responses": ["Yes, IIT Jodhpur maintains a responsive administration. Most offices have designated visiting hours and email communication is usually prompt. Students can also reach out via ERP or contact faculty directly."],
+          "context_set": ""
+        },
+        {
+          "tag": "academics_majors",
+          "patterns": ["What majors are popular?", "Which fields of study have a high enrollment?", "What are the most sought-after majors in your college?"],
+          "responses": ["At IIT Jodhpur, Computer Science and Engineering, Artificial Intelligence & Data Science, and Electrical Engineering are some of the most popular and high-demand branches."],
+          "context_set": ""
+        },
+        {
+          "tag": "academics_reputation",
+          "patterns": ["What departments or programs have the best reputations?", "Which academic programs are well-regarded?", "Are there any standout departments in your college?"],
+          "responses": ["IIT Jodhpur is particularly known for its Computer Science, AI & Data Science, Bioscience & Bioengineering, and Materials Engineering departments due to their research output and academic rigour."],
+          "context_set": ""
+        },
+        {
+          "tag": "favorite_class",
+          "patterns": ["What's your favorite class?", "Which class do you enjoy the most?", "Do you have a favorite subject?"],
+          "responses": ["As an AI, I don’t have personal preferences, but students at IIT Jodhpur often enjoy hands-on and project-based courses like Machine Learning, Robotics, and Human-Computer Interaction."],
+          "context_set": ""
+        },
+        {
+          "tag": "professors_teachers",
+          "patterns": ["Are your professors good teachers?", "How is the quality of teaching at your college?", "Do you have experienced faculty?"],
+          "responses": ["IIT Jodhpur has a diverse and highly qualified faculty, many with international academic and research experience. Students appreciate their approachable and research-oriented teaching style."],
+          "context_set": ""
+        },
+        {
+            "tag": "professors_office_hours",
+            "patterns": ["Do your professors hold office hours, and will they meet with you outside of class?", "Are professors available for one-on-one meetings?", "Can students easily meet with professors?"],
+            "responses": ["Yes, most professors at IIT Jodhpur are approachable and hold regular office hours. Students can also email them to schedule one-on-one meetings for academic or research discussions."],
+            "context_set": ""
+        },
+        {
+            "tag": "professors_vs_TAs",
+            "patterns": ["Are most of your classes taught by professors or teaching assistants?", "Who primarily teaches the classes?", "Do you have a lot of classes taught by TAs?"],
+            "responses": ["At IIT Jodhpur, professors handle the majority of course content delivery, especially for core subjects. Teaching Assistants (TAs) assist with lab sessions, tutorials, and evaluations."],
+            "context_set": ""
+        },
+        {
+            "tag": "first_choice_classes",
+            "patterns": ["Were you able to take most of your first-choice classes?", "Do students generally get their preferred classes?", "How likely are you to get into your desired classes?"],
+            "responses": ["Most students at IIT Jodhpur are able to register for their first-choice courses, especially core courses. Electives are allotted based on preference and seat availability using the ERP system."],
+            "context_set": ""
+        },
+        {
+            "tag": "class_format",
+            "patterns": ["Are your classes lecture-based or discussion-based?", "How are the classes structured?", "What's the typical format of a class?"],
+            "responses": ["Classes at IIT Jodhpur vary in format. While core courses are usually lecture-based, many electives and lab-based courses involve interactive sessions, discussions, and hands-on projects."],
+            "context_set": ""
+        },
+        {
+            "tag": "reading_writing",
+            "patterns": ["How much reading and writing is required in your courses?", "Are there a lot of assignments involving reading and writing?", "Is there a heavy emphasis on written work?"],
+            "responses": ["The workload depends on the course. Humanities and HSS courses tend to include more reading and writing, while technical courses focus more on problem-solving, coding, and reports."],
+            "context_set": ""
+        },
+        {
+            "tag": "collaborative_work",
+            "patterns": ["How often are collaborative work or group presentations required?", "Do you have a lot of group projects?", "Is there an emphasis on teamwork?"],
+            "responses": ["Collaborative work is common at IIT Jodhpur. Courses in design, AI, and entrepreneurship often include team-based assignments and projects that enhance teamwork and communication skills."],
+            "context_set": ""
+        },
+        {
+            "tag": "academic_advising",
+            "patterns": ["How satisfied are you with academic advising?", "Is the academic advising program helpful?", "Do advisors provide guidance for course selection?"],
+            "responses": ["Academic advising at IIT Jodhpur is handled by faculty advisors assigned to students. They help with course planning, project guidance, and overall academic development."],
+            "context_set": ""
+        },
+        {
+            "tag": "tutoring_programs",
+            "patterns": ["Do students use any on-campus tutoring programs or writing centers?", "Are there resources available for academic support?", "How can I get tutoring assistance?"],
+            "responses": ["IIT Jodhpur offers peer tutoring through academic clubs and mentorship programs. Some departments also offer remedial or extra classes for specific subjects before exams."],
+            "context_set": ""
+        },
+        {
+            "tag": "class_size",
+            "patterns": ["How big are your classes?", "Are the class sizes large or small?", "Do you have small class sizes?"],
+            "responses": ["Core courses at IIT Jodhpur typically have 100+ students, but elective and advanced-level courses often have smaller class sizes, making them more interactive."],
+            "context_set": ""
+        },
+        {
+            "tag": "independent_study",
+            "patterns": ["Does your major require an independent study or capstone project?", "Are there opportunities for independent research?", "Is there a culminating project for your major?"],
+            "responses": ["Yes, BTech students at IIT Jodhpur complete Capstone Projects and are encouraged to undertake independent research under faculty mentorship, especially in their final year."],
+            "context_set": ""
+        },
+        {
+            "tag": "professor_research",
+            "patterns": ["Are professors available for research with students?", "Can students engage in research projects with faculty?", "How can I get involved in research at your college?"],
+            "responses": ["Yes, IIT Jodhpur has a strong research culture. Students can collaborate on projects with faculty members through semester projects, summer internships, or the SRIP program."],
+            "context_set": ""
+        },
+        {
+            "tag": "study_abroad",
+            "patterns": ["Is it popular to study abroad?", "Are there study abroad programs available?", "Can students spend a semester abroad?"],
+            "responses": ["While not very common, IIT Jodhpur has MoUs with international universities for semester exchange programs and research internships abroad. Interested students can apply through the IR office."],
+            "context_set": ""
+        },
+        {
+            "tag": "first_year_experience",
+            "patterns": ["What's it like to be a first-year student here?", "Can you describe the first-year experience?", "What should I expect as a freshman?"],
+            "responses": ["First-year students at IIT Jodhpur experience a blend of academic rigor and community building. There are orientation sessions, mentorship programs, and introductory courses to ease the transition."],
+            "context_set": ""
+        },
+        {
+            "tag": "typical_day",
+            "patterns": ["What's a typical day like?", "Can you describe a day in the life of a student?", "What's the daily routine at your college?"],
+            "responses": ["A typical day includes lectures, labs, and study sessions, with breaks for meals at the mess. Students often spend evenings in the hostels, sports complex, or working on projects in labs."],
+            "context_set": ""
+        },
+        {
+            "tag": "study_time",
+            "patterns": ["How much time do students spend studying per week?", "Is there a lot of studying required?", "What's the average study time for students?"],
+            "responses": ["On average, students at IIT Jodhpur study 15–25 hours per week outside class, depending on course load, project deadlines, and exam schedules."],
+            "context_set": ""
+        },
+        {
+            "tag": "non_class_activities",
+            "patterns": ["What do you do when you're not in class?", "How do students spend their free time?", "Are there activities to do outside of class?"],
+            "responses": ["Outside class, students participate in clubs like dance, robotics, coding, or debate. Many are also involved in organizing college events like Ignus and Spandan."],
+            "context_set": ""
+        },
+        {
+            "tag": "weekend_activities",
+            "patterns": ["What do you do on the weekends?", "Are there weekend activities or events?", "How do students spend their weekends?"],
+            "responses": ["Weekends are a mix of rest and activity. Students attend club meetings, play sports, explore Jodhpur, or hang out at the Student Activity Center (SAC) or mess lawns."],
+            "context_set": ""
+        },
+        {
+            "tag": "social_scene",
+            "patterns": ["What is the social scene like?", "How would you describe the social life on campus?", "Are there opportunities to meet new people?"],
+            "responses": ["The social scene at IIT Jodhpur is vibrant, especially during fests, club events, and inter-hostel competitions. It’s easy to make friends through shared interests and hostel life."],
+            "context_set": ""
+        },
+        {
+            "tag": "hometown_activities",
+            "patterns": [
+            "What kinds of things are there to do in your school's hometown?",
+            "Are there recreational activities in the local area?",
+            "What are some popular attractions near the college?"
+            ],
+            "responses": [
+            "Our school's hometown offers a range of recreational activities, cultural events, shopping centers, restaurants, and natural attractions. You can explore local parks, museums, theaters, and enjoy the local cuisine."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "food",
+            "patterns": [
+            "How's the food?",
+            "What is the quality of the food on campus?",
+            "Are there good dining options?"
+            ],
+            "responses": [
+            "The college provides a variety of dining options on campus, including a functional canteen which is open till 2 am and food court named Shamiyana that is open till 12 am. The quality of food is generally satisfactory, with options to cater to different dietary preferences."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "on_campus_housing",
+            "patterns": [
+            "Do most students live on-campus?",
+            "Are there on-campus housing options?",
+            "What percentage of students live in dorms?"
+            ],
+            "responses": [
+            "While the availability of on-campus housing may vary, many students choose to live in dorms or residence halls provided by the college. Off-campus housing options are also available for students."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "dorm_quality",
+            "patterns": [
+            "How are the dorms?",
+            "Are the dormitories comfortable?",
+            "What's the quality of on-campus housing?"
+            ],
+            "responses": [
+            "The quality of dormitories varies based on the specific residence halls. Generally, the college strives to provide comfortable and convenient living spaces with amenities that cater to students' needs."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "popular_clubs",
+            "patterns": [
+            "Which clubs and student organizations are popular?",
+            "Are there any standout clubs on campus?",
+            "What are some of the most active student organizations?"
+            ],
+            "responses": [
+            "Our college has a wide range of clubs and student organizations catering to diverse interests. Popular clubs include academic organizations, cultural clubs, sports teams, community service groups, and more."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "fraternities_sororities",
+            "patterns": [
+            "Do lots of students belong to fraternities or sororities?",
+            "Are there many Greek organizations on campus?",
+            "What's the Greek life like at your college?"
+            ],
+            "responses": [
+            "While the presence and prominence of fraternities and sororities can vary among colleges, our college does have a Greek life community. Participation in these organizations is a personal choice for interested students."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "favorite_place_on_campus",
+            "patterns": [
+            "What's your favorite place on campus?",
+            "Which location do you enjoy the most?",
+            "Where do students like to hang out?"
+            ],
+            "responses": [
+            "As an AI, I don't have personal preferences. However, many students enjoy spending time in common areas, libraries, student centers, outdoor spaces, and campus cafeterias."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "study_locations",
+            "patterns": [
+            "Where do you like to study?",
+            "What are some good study spots?",
+            "Are there quiet places to study on campus?"
+            ],
+            "responses": [
+            "There are several study spots on campus, including libraries, study lounges, coffee shops, and outdoor seating areas. It's important to find a location that suits your study preferences and helps you focus."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "campus_facilities",
+            "patterns": [
+            "What are the facilities like (science labs, libraries, theaters, gyms, etc.)?",
+            "Are the campus facilities well-maintained?",
+            "Does the college have modern facilities?"
+            ],
+            "responses": [
+            "Our college prides itself on maintaining well-equipped facilities to support students' academic and extracurricular activities. This includes modern science labs, libraries with extensive resources, theaters, and well-equipped gyms."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "computer_labs",
+            "patterns": [
+            "Are there enough computer labs?",
+            "How accessible are the computer labs?",
+            "Is there a shortage of computer lab facilities?"
+            ],
+            "responses": [
+            "Our college provides an ample number of computer labs across campus. These labs are accessible to students and equipped with the necessary technology and software needed for academic work."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "campus_wifi",
+            "patterns": [
+            "How is the WiFi on campus?",
+            "Is the campus WiFi reliable?",
+            "Are there any connectivity issues with the WiFi?"
+            ],
+            "responses": [
+            "The campus WiFi network is designed to provide reliable internet connectivity to students, faculty, and staff. However, occasional connectivity issues may arise, which are usually promptly addressed by the IT department."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "campus_navigation",
+            "patterns": [
+            "Is it easy to get around campus?",
+            "Are the campus buildings easy to navigate?",
+            "Is the campus layout student-friendly?"
+            ],
+            "responses": [
+            "The campus is designed to be student-friendly, and campus buildings are typically well-marked and easy to navigate. Campus maps, signage, and digital resources are available to help students find their way around."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "sports_popularity",
+            "patterns": [
+            "Are sports popular?",
+            "Do many students participate in sports?",
+            "What's the athletic culture like at your college?"
+            ],
+            "responses": [
+            "Sports are popular at our college, and many students participate in various athletic activities. We have a range of sports teams, intramural sports, and fitness programs to cater to different interests and skill levels."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "school_spirit",
+            "patterns": [
+            "Is there a lot of school spirit?",
+            "Do students show a strong sense of school pride?",
+            "Are there spirited events or traditions?"
+            ],
+            "responses": [
+            "Our college has a vibrant school spirit, and students often show a strong sense of pride in their institution. There are spirited events, traditions, and opportunities to engage with the college community and showcase school pride."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "fellow_students",
+            "patterns": [
+            "How would you describe your fellow students?",
+            "What are the students like?",
+            "Is there a sense of community among students?"
+            ],
+            "responses": [
+            "The student body is diverse and inclusive, with individuals from various backgrounds, interests, and experiences. Students generally foster a sense of community and support each other's academic and personal growth."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "friendly_students",
+            "patterns": [
+            "Are the students here friendly?",
+            "Is it easy to make friends?",
+            "Do students interact with each other?"
+            ],
+            "responses": [
+            "Yes, the students here are generally friendly and welcoming. The college environment provides ample opportunities to meet new people, make friends, and form meaningful connections both inside and outside the classroom."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "student_body_unique",
+            "patterns": [
+            "What makes the student body unique?",
+            "Is there anything special about the student population?",
+            "What sets the students apart at your college?"
+            ],
+            "responses": [
+            "The student body at our college is unique in its diversity of backgrounds, perspectives, talents, and passions. This diversity fosters a rich learning environment and encourages students to embrace different cultures and viewpoints."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "campus_diversity",
+            "patterns": [
+            "Is there diversity on campus?",
+            "Are there students from different cultural backgrounds?",
+            "Does the college promote diversity and inclusion?"
+            ],
+            "responses": [
+            "Yes, our college values diversity and strives to create an inclusive campus community. Students from different cultural backgrounds, ethnicities, and countries contribute to the diverse fabric of our college community."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "international_students",
+            "patterns": [
+            "Are there many students from other countries?",
+            "Do you have a significant international student population?",
+            "How diverse is the international representation at your college?"
+            ],
+            "responses": [
+            "Our college welcomes students from around the world, and we have a diverse international student population. International students contribute to the cultural exchange and global perspectives within the college community."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "interactions_among_students",
+            "patterns": [
+            "Do students of different races and classes interact easily?",
+            "Is there interaction and socialization among diverse groups?",
+            "Do students embrace diversity and engage in cross-cultural interactions?"
+            ],
+            "responses": [
+            "Students at our college have opportunities to interact and socialize with peers from different races, classes, and cultural backgrounds. The college promotes a welcoming and inclusive environment that encourages cross-cultural interactions and understanding."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "student_cliques",
+            "patterns": [
+            "Are students cliquish?",
+            "Is there a presence of cliques on campus?",
+            "Do students segregate into exclusive groups?"
+            ],
+            "responses": [
+            "While some social groups may naturally form based on shared interests and affiliations, our college encourages inclusivity and fosters an environment where students from different backgrounds can mingle and form connections beyond cliques."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "internship_opportunities",
+            "patterns": [
+            "Are internships available? How do you find them?",
+            "What internship opportunities are there?",
+            "How does the college support students in finding internships?"
+            ],
+            "responses": [
+            "Internship opportunities are available for students, and the college often provides resources and support to help students find and secure internships. The college's career services office and faculty advisors can offer guidance in exploring and applying for internships."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "career_services",
+            "patterns": [
+            "Is Career Services helpful?",
+            "What services does the career center provide?",
+            "How effective is the college's career guidance?"
+            ],
+            "responses": [
+            "Career Services at our college offers various resources and assistance to help students with career exploration, resume building, job search strategies, interview preparation, and more. Many students find the career guidance helpful in their professional development."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "mentorship_program",
+            "patterns": [
+            "Do you have a mentor?",
+            "Is there a mentorship program?",
+            "How can students connect with mentors?"
+            ],
+            "responses": [
+            "Our college may have a mentorship program or opportunities for students to connect with mentors. These programs facilitate valuable guidance and support from experienced individuals who can provide insights and advice on academic and career paths."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "co-op_program",
+            "patterns": [
+            "Does your school have a co-op program?",
+            "Are there cooperative education opportunities?",
+            "How does the college support students in co-op experiences?"
+            ],
+            "responses": [
+            "Some colleges offer co-op programs where students can gain practical work experience related to their field of study while earning academic credit. If our college has a co-op program, students can explore such opportunities with the support of the college's career services or cooperative education office."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "leadership_opportunities",
+            "patterns": [
+            "What options exist for leadership skills on campus?",
+            "Are there leadership programs or positions?",
+            "How can students develop leadership skills?"
+            ],
+            "responses": [
+            "Our college offers various opportunities for students to develop leadership skills. Students can join student government, clubs, or organizations that provide leadership positions, participate in leadership workshops or programs, and engage in community service to foster leadership qualities."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "service_learning",
+            "patterns": [
+            "What options exist for service learning in the community?",
+            "Are there community service programs?",
+            "How can students get involved in community service?"
+            ],
+            "responses": [
+            "Our college often encourages service learning and community engagement. Students can get involved in community service programs, volunteer with local organizations, participate in service-learning courses, or join campus initiatives dedicated to making a positive impact in the community."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "employer_recruitment",
+            "patterns": [
+            "Do employers recruit students on campus?",
+            "Are there career fairs or job fairs?",
+            "How does the college connect students with potential employers?"
+            ],
+            "responses": [
+            "Employer recruitment is a common practice at many colleges. Career fairs, job fairs, and networking events are organized to connect students with potential employers. The college's career services office often plays a role in facilitating these connections."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "summer_jobs",
+            "patterns": [
+            "How easy is it to find summer jobs and other kinds of work through your school?",
+            "Are there resources for finding summer employment?",
+            "Does the college assist with summer job opportunities?"
+            ],
+            "responses": [
+            "Our college may provide resources and support to help students find summer jobs and other types of employment. The career services office, online job boards, and networking events can be valuable in exploring and securing summer job opportunities."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "notable_graduates",
+            "patterns": [
+            "Who are some of the notable graduates from your college?",
+            "Can you mention any famous alumni?",
+            "Which successful individuals attended your college?"
+            ],
+            "responses": [
+            "Our college has a distinguished list of notable graduates and successful alumni in various fields. Some may include renowned professionals, entrepreneurs, artists, scientists, and leaders who have made significant contributions to their respective fields."
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "alumni_association",
+            "patterns": [
+            "How visible is your school's alumni association on campus?",
+            "Does the college have an active alumni network?",
+            "Are there opportunities to connect with alumni?"
+            ],
+            "responses": [
+            "Many colleges have active alumni associations that offer networking opportunities, mentorship programs, and career support for current students. The visibility and engagement of the alumni association can vary, but efforts are often made to connect students with alumni. Some notable alumni of IIT Jodhpur include Dr. Ranveer Singh, Dr. Rohan Sharma, and Dr. Parmod K. Paul, among others, who have made significant contributions in their respective fields "
+            ],
+            "context_set": ""
+        },
+        {
+            "tag": "hands-on_experiences",
+            "patterns": [
+            "What kinds of hands-on or practical experiences have you had in and outside of the classroom?",
+            "Are there opportunities for practical learning?",
+            "How does the college emphasize experiential learning?"
+            ],
+            "responses": [
+            "Colleges often provide opportunities for hands-on and practical experiences both inside and outside the classroom. These may include internships, research projects, fieldwork, service-learning, study abroad programs, and collaborative projects that enhance the learning process and offer real-world application of knowledge."
+            ],
+            "context_set": ""
+        }
+    ]
+  }
+  
