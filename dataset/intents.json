@@ -21,7 +21,7 @@
       {
         "tag": "identity",
         "patterns": ["What is your name?", "What should I call you?", "Who are you?"],
-        "responses": ["You can call me Chat Plus. I'm a chatbot created by IIT Jodhpur students."],
+        "responses": ["You can call me Chat Sphere. I'm a chatbot created by IIT Jodhpur students."],
         "context_set": ""
       },
       {
