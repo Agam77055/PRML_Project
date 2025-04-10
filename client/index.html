@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Assistant</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+  <!-- Main chat area -->
+  <main class="chat-area full-width">
+    <div id="chat_container">
+      <!-- Welcome screen that shows when no messages -->
+      <div class="welcome-screen">
+        <div class="logo-container">
+          <img src="../assets/bot.svg" alt="Bot Logo" class="welcome-logo">
+        </div>
+        <h1>How can I help you today?</h1>
+      </div>
+    </div>
+    <div class="bottom-controls">
+      <button id="new-chat-btn" title="Start new chat">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M12 5V19M5 12H19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+      <form>
+        <div class="input-container">
+          <textarea name="prompt" rows="1" placeholder="Message AI Assistant..." required></textarea>
+          <button type="submit" disabled>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+  </div>
+  <script type="module" src="/src/script.js"></script>
+  </body>
