@@ -10,6 +10,7 @@ app.use(cors());
 app.use(express.json());
 
 const CLOUD_RUN_URL = process.env.CLOUD_RUN_URL;
+const PORT = process.env.PORT || 8080;
 
 app.get('/', async (req, res) => {
   res.status(200).send({
@@ -39,7 +40,6 @@ app.post('/', async (req, res) => {
   }
 });
 
-const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });

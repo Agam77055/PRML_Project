@@ -212,7 +212,7 @@ document.addEventListener('DOMContentLoaded', () => {
     disableInput();
     
     try {
-      const response = await fetch('http://localhost:5001', {
+      const response = await fetch('https://prml-project-383089853912.asia-south1.run.app/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
