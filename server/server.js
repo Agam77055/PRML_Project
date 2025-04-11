@@ -1,12 +1,15 @@
 import express from 'express';
 import axios from 'axios';
 import cors from 'cors';
+import * as dotenv from 'dotenv';
+
+dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-const CLOUD_RUN_URL = process.env.CLOUD_RUN_URL || 'https://chatbot-app-383089853912.asia-south1.run.app/chat';
+const CLOUD_RUN_URL = process.env.CLOUD_RUN_URL;
 
 app.get('/', async (req, res) => {
   res.status(200).send({
