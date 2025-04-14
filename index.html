@@ -14,25 +14,22 @@
   </header>
 
   <main>
-    <section id="Project Overview">
-        <h3>PROJECT OVERVIEW</h3>
-        <p></p>
-      </section>
 
       <section id="images">
-        <h3>IMAGES</h3>
         <div class="carousel">
-          <img src="img1.png" class="carousel-image active" alt="Frontend Image 1" />
-          <img src="img2.png" class="carousel-image" alt="Frontend Image 2" />
-          <img src="img3.png" class="carousel-image" alt="Frontend Image 3" />
-          <button class="carousel-btn prev" onclick="prevImage()">‹</button>
-          <button class="carousel-btn next" onclick="nextImage()">›</button>
-        </div>
+            <div class="carousel-images">
+              <img src="images/im1.png" class="carousel-image" alt="Frontend Image 2" />
+              <img src="images/front_im3.png" class="carousel-image" alt="Frontend Image 2" />
+              <img src="images/front_im2.png" class="carousel-image" alt="Frontend Image 3" />
+            </div>
+            <button class="carousel-btn prev" onclick="prevImage()">‹</button>
+            <button class="carousel-btn next" onclick="nextImage()">›</button>
+          </div>
       </section>
 
     <section id="abstract">
       <h3>ABSTRACT</h3>
-      <p><!-- Abstract will be added here --></p>
+      <p>ChatSphere is an advanced, modular chatbot framework developed entirely from scratch using Python, designed to assist college students—especially first-years—in quickly accessing accurate institutional information. Leveraging classical machine learning models such as Multinomial Naive Bayes, Decision Trees, and Random Forests, ChatSphere offers robust intent classification, entity extraction, and context-aware response generation. With a custom-built dataset tailored to IIT Jodhpur's environment and deployment on cloud platforms using Docker, Flask, and Vercel, the system ensures scalability and ease of use. This project showcases the practical application of NLP and ML techniques in solving real-world information retrieval challenges in academic settings.</p>
     </section>
 
     <section id="report">
@@ -44,9 +41,12 @@
     </section>
 
     <section id="methodology">
-      <h3>METHODOLOGY</h3>
-      <p><!-- Add your methodology here --></p>
-    </section>
+        <h3>METHODOLOGY</h3>
+        <p>
+          We began by curating a custom dataset specific to institutional queries, structured with intents, sample patterns, and responses. Text data was preprocessed using a custom tokenizer that handled contractions, multi-word expressions, and punctuation. Feature extraction was performed using a TF-IDF vectorizer built from scratch. We implemented and evaluated three classifiers—Multinomial Naive Bayes, Decision Tree, and Random Forest—for intent classification. The backend was containerized using Docker and deployed on Google Cloud with Flask, while the frontend was built with Node.js and hosted on Vercel. Training was conducted using Colab Enterprise and Vertex AI with GPU acceleration.
+        </p>
+      </section>
+      
 
     <section id="code">
       <h3>CODE</h3>
@@ -55,9 +55,16 @@
     </section>
 
     <section id="dataset">
-      <h3>DATASET</h3>
-      <p>Dataset will be uploaded here soon.</p>
-    </section>
+        <h3>DATASET</h3>
+        <p>
+          Our dataset is custom-built specifically for our institutional environment. Each entry is organized into an intent tag, a list of user input patterns, and a corresponding set of responses. This structure helps the chatbot map user queries to predefined intents with high accuracy. Preprocessing techniques such as synonym replacement and lexical augmentation enhance generalization. The dataset is modular and scalable, allowing easy updates and extensions.
+        </p>
+        <p><strong>Dataset File:</strong></p>
+        <ul>
+          <li><a href="dataset/intents.json" download>Download intents1.json</a></li>
+        </ul>
+      </section>
+      
 
     <section id="video">
       <h3>SPOTLIGHT VIDEO</h3>
@@ -125,7 +132,7 @@
 
     <section id="acknowledgement">
       <h3>AKNOWLEDGEMENT</h3>
-      <p>We would like to thank our professor and mentors for guiding us throughout this project.</p>
+      <p>We would like to thank our instructor Dr Anand Mishra for guiding us throughout this project and our course.</p>
     </section>
   </main>
 

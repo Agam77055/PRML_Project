@@ -66,16 +66,46 @@ body {
   }
   
   .carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 20px;
+    position: relative;
+    max-width: 100%;
+    margin: 20px auto;
+    overflow: hidden;
+    height: 500px; /* Adjust height for larger image */
   }
   
-  .carousel img {
-    max-width: 300px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  .carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
   }
+  
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+  .carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .carousel-btn.prev {
+    left: 10px;
+  }
+  
+  .carousel-btn.next {
+    right: 10px;
+  }  
   
   .team-list-horizontal {
     display: flex;
