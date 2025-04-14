@@ -135,8 +135,15 @@ body {
   .team-info {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 8px;
   }
+  
+  .linkedin-icon {
+    width: 5px;
+    height: 5px;
+    vertical-align: middle;
+  }
+  
   
   .team-info span {
     font-size: 1.1rem;
@@ -144,22 +151,12 @@ body {
     color: #2c3e50;
   }
   
-  .linkedin-icon {
-    width: 24px;
-    height: 24px;
-    transition: transform 0.2s ease;
-  }
-  
-  .linkedin-icon:hover {
-    transform: scale(1.2);
-  }
-  
   footer {
     text-align: center;
     padding: 20px;
-    background-color: #1e2a38;
+    background-color:#f8f9fc;
     color: white;
-    font-size: 0.9em;
+    font-size: 1em;
   }
   
   /* Responsive */
