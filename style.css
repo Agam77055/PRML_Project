@@ -1,0 +1,152 @@
+/* General Reset */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f4f8;
+    color: #1f2d3d;
+  }
+  
+  header {
+    background-color: #1e2a38;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  main {
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  
+  section {
+    margin-bottom: 60px;
+    padding: 30px 20px;
+    background-color: transparent;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
+    border-radius: 0;
+  }
+  
+  h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  h2 {
+    color: #d0d6db;
+    font-size: 1.5em;
+    font-weight: 400;
+  }
+  
+  h3 {
+    color: #34495e;
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    padding-left: 1px;
+  }
+  
+  .authors {
+    color: white;
+    font-size: 1.1em;
+    margin-top: 10px;
+  }
+  
+  p, a {
+    font-size: 1em;
+    line-height: 1.6;
+    color: #1f2d3d;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+    color: #2980b9;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 20px;
+  }
+  
+  .carousel img {
+    max-width: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .team-list-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+  }
+  
+  .team-member-horizontal {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 10px 20px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.08);
+    width: 100%;
+    max-width: 600px;
+  }
+  
+  .team-member-horizontal img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .team-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .team-info span {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: #2c3e50;
+  }
+  
+  .linkedin-icon {
+    width: 24px;
+    height: 24px;
+    transition: transform 0.2s ease;
+  }
+  
+  .linkedin-icon:hover {
+    transform: scale(1.2);
+  }
+  
+  footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #1e2a38;
+    color: white;
+    font-size: 0.9em;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .team-member-horizontal {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .team-member-horizontal img {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  
+    .team-info {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
