@@ -340,3 +340,157 @@ class DecisionTreeClassifierFromScratch(BaseEstimator, ClassifierMixin):
     def predict(self, X):
         probas = self.predict_proba(X)
         return self.classes_[np.argmax(probas, axis=1)]
+    
+
+class RandomForestClassifierFromScratch(BaseEstimator, ClassifierMixin):
+    def __init__(self, n_estimators=100, max_depth=None, min_samples_split=2,
+                 min_samples_leaf=1, criterion='gini', max_features='sqrt',
+                 bootstrap=True, random_state=None, n_jobs=-1):
+        self.n_estimators = n_estimators
+        self.max_depth = max_depth
+        self.min_samples_split = min_samples_split
+        self.min_samples_leaf = min_samples_leaf
+        self.criterion = criterion
+        self.max_features = max_features
+        self.bootstrap = bootstrap
+        self.random_state = random_state
+        self.n_jobs = n_jobs
+        self.estimators_ = []
+        self.feature_importances_ = None
+
+    def _bootstrap_sample(self, X, y, random_state):
+        """Create a bootstrap sample for a single tree"""
+        n_samples = X.shape[0]
+        rng = np.random.RandomState(random_state)
+
+        if self.bootstrap:
+            indices = rng.choice(range(n_samples), size=n_samples, replace=True)
+        else:
+            indices = np.arange(n_samples)
+
+        return X[indices], y[indices]
+
+    def _build_tree(self, X, y, tree_idx):
+        """Build a single decision tree"""
+        # Set random state for both bootstrapping and tree building
+        tree_random_state = None
+        if self.random_state is not None:
+            tree_random_state = self.random_state + tree_idx
+
+        # Create a decision tree
+        tree = DecisionTreeClassifierFromScratch(
+            max_depth=self.max_depth,
+            min_samples_split=self.min_samples_split,
+            min_samples_leaf=self.min_samples_leaf,
+            criterion=self.criterion,
+            max_features=self.max_features,
+            random_state=tree_random_state
+        )
+
+        # Get bootstrap sample
+        X_sample, y_sample = self._bootstrap_sample(X, y, tree_random_state)
+
+        # Fit the tree on the bootstrap sample
+        tree.fit(X_sample, y_sample)
+
+        return tree
+
+    def fit(self, X, y):
+        # Check that X and y have correct shape and convert sparse to dense
+        X, y = check_X_y(X, y, accept_sparse=True)
+
+        # Convert sparse matrix to dense if needed
+        X_array = X.toarray() if issparse(X) else X
+
+        self.classes_ = unique_labels(y)
+        self.n_features_in_ = X_array.shape[1]
+
+        # Set the global random state if provided
+        if self.random_state is not None:
+            np.random.seed(self.random_state)
+
+        # Get number of jobs
+        n_jobs = self.n_jobs
+        if n_jobs < 0:
+            n_jobs = min(abs(n_jobs), os.cpu_count() or 1)
+            n_jobs = max(1, n_jobs)  # Ensure at least 1 job
+
+        # Build trees in parallel if n_jobs != 1
+        if n_jobs == 1:
+            self.estimators_ = [self._build_tree(X_array, y, i) for i in range(self.n_estimators)]
+        else:
+            self.estimators_ = Parallel(n_jobs=n_jobs)(
+                delayed(self._build_tree)(X_array, y, i) for i in range(self.n_estimators)
+            )
+
+        # Combine feature importances from all trees
+        self.feature_importances_ = np.zeros(self.n_features_in_)
+        for tree in self.estimators_:
+            self.feature_importances_ += tree.feature_importances_
+
+        # Normalize feature importances
+        if self.n_estimators > 0:
+            self.feature_importances_ /= self.n_estimators
+
+        # Further normalize to sum to 1
+        if np.sum(self.feature_importances_) > 0:
+            self.feature_importances_ /= np.sum(self.feature_importances_)
+
+        return self
+
+    def predict_proba(self, X):
+        check_is_fitted(self, ['estimators_', 'classes_'])
+        X = check_array(X, accept_sparse=True)
+
+        # Convert sparse matrix to dense if needed
+        X_array = X.toarray() if issparse(X) else X
+
+        # Collect predictions from all trees
+        all_probas = np.array([estimator.predict_proba(X_array) for estimator in self.estimators_])
+
+        # Average predictions
+        return np.mean(all_probas, axis=0)
+
+    def predict(self, X):
+        probas = self.predict_proba(X)
+        return self.classes_[np.argmax(probas, axis=1)]
+    
+
+
+def find_best_model(X, y, test_size=0.2):
+    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=100)
+
+
+    models = [
+        ('Multinomial Naive Bayes', MultinomialNBFromScratch(), {'alpha': [0.1, 0.5, 1.0]}),
+        ('Decision Tree', DecisionTreeClassifierFromScratch(), {
+            'max_depth': [5, 10, 20, None],
+            'min_samples_split': [2, 5, 10],
+            'min_samples_leaf': [1, 2, 4],
+            'criterion': ['gini', 'entropy']
+        }),
+        ('Random Forest', RandomForestClassifierFromScratch(), {
+            'n_estimators': [100, 200, 300],
+            'max_depth': [10, 20, None],
+            'min_samples_split': [2, 5, 10],
+            'min_samples_leaf': [1, 2, 4]
+        })
+    ]
+
+    for name, model, param_grid in models:
+        grid = GridSearchCV(model, param_grid, cv=3, n_jobs=-1)
+        grid.fit(X_train, y_train)
+        y_pred = grid.predict(X_test)
+        score = accuracy_score(y_test, y_pred)
+        print(f'{name}: {score:.4f} (best parameters: {grid.best_params_})')
+
+    best_model = max(models, key=lambda x: GridSearchCV(x[1], x[2], cv=3, n_jobs=-1).fit(X_train, y_train).score(X_test, y_test))
+    print(f'\nBest model: {best_model[0]}')
+
+
+    # Fit the best model to the full training data
+    best_model[0].fit(X, y)
+
+    return best_model[0]
+
+# best_model = find_best_model(X, y)
